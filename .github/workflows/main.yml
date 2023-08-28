@@ -1,8 +1,20 @@
-name: hello-world!
-on: push
+name: Azure Web App Container Deployment
+
+ 
+
+on:
+  push:
+    branches:
+      - CISetupFeature # Change this to your default branch
+
+ 
+
 jobs:
-  my-job:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+ 
+
     steps:
-      - name: deadlock
-        run: echo "Zumba Zumba"
+      - name: Checkout code
+        uses: actions/checkout@v2
